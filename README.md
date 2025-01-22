@@ -50,3 +50,24 @@ An E-Commerce application that allows users to browse products, add them to a sh
 - *Deployment*:
   - Hosting:Vercel
   - Version control: Git/GitHub
+
+
+# Milestone 2 Progress
+
+In this milestone, I have made significant progress in setting up the project structure and developing the frontend and backend components. Below is a summary of the work completed:
+
+## Project Folder Structure
+- Organized the project into two main directories: `frontend` and `backend`.
+  - `frontend/`: Contains the React app and all related files for the user interface.
+  - `backend/`: Contains the Node.js server and the backend setup for API integration in future milestones.
+
+## Frontend Development
+- Set up a React application for the frontend using Vite.
+- Created and styled a **functional Login Page** with the following features:
+  - Email and password input fields.
+  - A submit button for logging in.
+  
+
+## Backend Development
+- Set up a basic Node.js server using **Express**.
+- Configured the server to handle basic routes and responses.
