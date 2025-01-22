@@ -1,29 +1,31 @@
 import React from 'react';
 
+
 const Login = () => {
   return (
-    <div className="loginpage">
-      <div className="loginpage2">
-        <h1 className="loginpage3">Login</h1>
-        <form className='logout'>
-          <label className="loginpage4">Email :</label>
-          <input
-            type="email"
-            className="loginpage5"
-            placeholder="Enter your email"
-          />
-          <label className="loginpage6">Password : </label>
-          <input
-            type="password"
-            className="loginpage7"
-            placeholder="Enter your password"
-          />
-          <button
-            type="submit"
-            className="loginpage8"
-          >
-            Login
-          </button>
+    <div className="login-container">
+      <div className="login-form">
+        <h1 className="title">Login</h1>
+        <form>
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              required
+              className="input-field"
+            />
+          </div>
+          <div className="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              required
+              placeholder="Enter your password"
+              className="input-field"
+            />
+          </div>
+          <button type="submit" className="submit-button">Login</button>
         </form>
       </div>
     </div>

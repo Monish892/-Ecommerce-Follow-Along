@@ -71,3 +71,38 @@ In this milestone, I have made significant progress in setting up the project st
 ## Backend Development
 - Set up a basic Node.js server using **Express**.
 - Configured the server to handle basic routes and responses.
+
+
+## Milestone 3 Progress
+
+## Overview
+
+Milestone 3 focuses on setting up the backend infrastructure, configuring database connectivity, and implementing basic error-handling mechanisms. This document outlines the progress made so far and also added some advanced css.
+
+ ## Progress
+
+## Setting Up Backend Folders and Files
+
+Created a clear folder structure to organize backend components:
+
+Initialized the project with:
+
+package.json
+
+.gitignore (includes node_modules and .env)
+
+.env file for environment variables.
+
+## Features Added"
+
+## Advanced CSS Styling"
+
+"The CSS styling was enhanced to provide a modern and visually appealing interface."
+
+"Key styling improvements include:"
+
+"Responsive design for various screen sizes."
+
+"Use of animations and hover effects for interactivity."
+
+"Consistent color schemes and typography for better user experience."
