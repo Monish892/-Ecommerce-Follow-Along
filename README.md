@@ -121,3 +121,29 @@ package.json
 1. Install dependencies:
    ```bash
    npm install
+
+## milestone-5 progress
+
+# User Registration Frontend
+
+## Features
+- **Sign-Up Page**:
+  - Users can enter their Name, Email, and Password to register.
+  - Includes a clean and simple UI.
+- **Form Validation**:
+  - Validates that the name is at least 3 characters.
+  - Ensures email is in a valid format.
+  - Checks that the password is at least 6 characters long.
+- Displays appropriate error messages for invalid inputs.
+
+## Technologies Used
+- **HTML**: For the structure of the sign-up form.
+- **CSS**: For styling and improving the user interface.
+- **JavaScript**: For handling form validation.
+
+## How to Use
+1. Open `signup.html` in a browser.
+2. Fill out the form fields and click "Register."
+3. If the inputs are valid, you'll see a success message.
+
+
