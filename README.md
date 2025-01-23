@@ -106,3 +106,18 @@ package.json
 "Use of animations and hover effects for interactivity."
 
 "Consistent color schemes and typography for better user experience."
+
+
+## milestone-4 progress
+
+# User Management System
+
+## Features
+- Create a new user with name, email, password, and profile picture.
+- Retrieve user information by ID.
+- File uploads handled using Multer.
+
+## Setup
+1. Install dependencies:
+   ```bash
+   npm install
