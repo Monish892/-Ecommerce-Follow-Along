@@ -1,26 +1,39 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #3b82f6, #6366f1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to right, #3b82f6, #6366f1);
+  padding: 20px;
 }
 
 .login-form {
-  background-color: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 400px;
   text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Title */
 .title {
   font-size: 2rem;
   font-weight: bold;
-  color: #333;
+  color: black;
   margin-bottom: 24px;
+  letter-spacing: 1px;
 }
 
 .form-group {
@@ -30,36 +43,82 @@
 
 .form-group label {
   font-size: 1rem;
-  color: #555;
+  color: #333;
   font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
 }
 
+/* Input Field */
 .input-field {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 1rem;
   outline: none;
-  transition: border 0.3s;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s, background-color 0.3s;
+  position: relative;
+  right: 10px;
 }
 
 .input-field:focus {
-  border: 2px solid #3b82f6;
+  border-color: #3b82f6;
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(110, 142, 251, 0.6);
+
 }
 
+/* Button Styles */
 .submit-button {
   width: 100%;
-  padding: 12px;
-  background-color: #3b82f6;
+  padding: 14px;
+  background: linear-gradient(to right, #3b82f6, #6366f1);
   color: white;
   font-weight: bold;
+  font-size: 1rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .submit-button:hover {
-  background-color: #2563eb;
+  background: linear-gradient(135deg, #5b79f7, #926adb);
+  transform: scale(1.02);
+
+}
+
+.submit-button:active {
+  transform: scale(0.98);
+  background: linear-gradient(135deg, #5b79f7, #926adb);
+
+}
+
+.small-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 20px;
+}
+
+.small-text a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.small-text a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
