@@ -147,3 +147,57 @@ package.json
 3. If the inputs are valid, you'll see a success message.
 
 
+### # Milestone 6: Secure User Signup Implementation
+
+## Overview
+In Milestone 6, we focused on implementing a secure backend endpoint to handle user signups. This included encrypting user passwords and securely storing complete user data in the database.
+
+---
+
+## Key Objectives
+1. **Encrypt User Passwords:**
+   - Used the `bcrypt` library to hash user passwords during the signup process.
+   - Ensured passwords are stored securely and not in plain text.
+
+2. **Store Complete User Data Securely:**
+   - Captured user details such as name, email, and hashed password.
+   - Integrated a database to save user data while adhering to security best practices.
+
+3. **Enhance Security:**
+   - Incorporated password salting and hashing for added protection.
+   - Minimized the risk of exposing sensitive data by sanitizing API responses.
+
+---
+
+## Implementation Summary
+
+### Password Encryption:
+- Used `bcrypt` to salt and hash user passwords.
+- Implemented the hashing process during the signup phase to enhance security.
+
+### Database Integration:
+- Configured MongoDB for storing user data.
+- Ensured schema validation to maintain data integrity.
+
+### Signup Flow:
+1. **User Input:** Name, email, and password are provided by the user.
+2. **Password Hashing:** The password is encrypted using `bcrypt` before being saved.
+3. **Data Storage:** All details, including the hashed password, are stored in the database.
+4. **API Response:** A success message is returned without exposing sensitive information.
+
+
+
+---
+
+## Next Steps
+- Add email verification functionality for added security.
+- Implement JWT-based authentication for user sessions.
+- Enhance input validation to prevent malicious user input.
+
+---
+
+Milestone 6 has laid a strong foundation for secure user authentication and data handling. Future improvements will build on these practices to further enhance the application’s security and user experience.
+
+
+
+

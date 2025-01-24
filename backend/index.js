@@ -1,29 +1,26 @@
+const bcrypt = require('bcrypt');
 const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const userRoutes = require('../routes/userRoutes');
-const path = require('path');
-
 const app = express();
-const PORT = process.env.PORT || 5000;
+app.use(express.json());
 
+let users = [];
 
-app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true })); 
+app.post('/signup', async (req, res) => {
+  const { name, email, password } = req.body;
 
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+  try {
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
 
-app.use('/routes', userRoutes);
+    const user = { name, email, password: hashedPassword };
+    users.push(user);
 
-mongoose
-  .connect('mongodb+srv://grmonishs65:2007@monish.pnlhe.mongodb.net/hloo', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  })
-  .then(() => console.log('MongoDB connected'))
-  .catch((err) => console.error('MongoDB connection error:', err));
+    res.status(201).json({ message: 'User registered successfully!' });
+  } catch (error) {
+    res.status(500).json({ error: 'Error creating user account' });
+  }
+});
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
 });
