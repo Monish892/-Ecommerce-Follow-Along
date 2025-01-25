@@ -1,10 +1,9 @@
-
-
 import React from 'react';
 import Login from './Login';
 import SignUp from './components/Signup'
 
 import {Route, Routes, BrowserRouter} from 'react-router-dom'
+import Homepage from './components/homepage';
 
 const App = () => {
   
@@ -12,8 +11,10 @@ return (
 <BrowserRouter>
 <Routes>
   <Route path='/signup' element = {<SignUp/>}/>
+  <Route path='/' element={<Homepage/>}/>
   <Route path='/login' element = {<Login/>}/>
 </Routes>
+
 </BrowserRouter>
 )
   
