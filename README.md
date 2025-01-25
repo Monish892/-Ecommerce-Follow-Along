@@ -277,3 +277,64 @@ This project demonstrates how to create a reusable **Card Component** to showcas
 
 ---
 
+
+# Milestone 9: Product Form Creation
+
+## Objective
+The goal of this milestone is to create a user-friendly product form that allows users to input all necessary product details and upload multiple images. The data will eventually be saved to a database and displayed on the product home page created in a previous milestone.
+
+---
+
+## Why Create a Product Form?
+
+This lesson is focused on understanding how to build forms in React for collecting and handling user input.
+
+- **Purpose**: To create a system where product details can be submitted by users or admins.
+- **Outcome**: Details collected through the form will be stored in a database and later displayed on the product page.
+- **Additional Features**: You can enhance the form by:
+  - Adding admin access for product uploads.
+  - Associating products with specific shop profiles.
+
+---
+
+## Features of the Product Form
+
+1. **Input Fields**:
+   - Product Name
+   - Product Description
+   - Price
+   - Stock Quantity
+
+2. **File Upload**:
+   - Multiple images can be uploaded for a product.
+   - Image previews are displayed before submission.
+
+3. **Validation**:
+   - Required fields must be filled out before submission.
+
+4. **Backend Integration**:
+   - Data is sent to the backend using a `POST` request.
+
+---
+
+## Steps to Create the Product Form
+
+### 1. **React Component Setup**
+- Create a new React component named `ProductForm.jsx`.
+- Use state to manage input data.
+- Handle form submission and file input events.
+
+### 2. **Styling**
+- Add normal CSS for styling the form.
+- Create a separate `ProductForm.css` file for styles.
+
+### 3. **Image Previews**
+- Generate preview URLs for images using `URL.createObjectURL()`.
+
+### 4. **Backend Communication**
+- Prepare a `FormData` object to send data to the backend.
+
+---
+
+
+
