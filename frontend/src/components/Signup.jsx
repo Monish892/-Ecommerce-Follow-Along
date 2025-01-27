@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./signUp.css";
+// import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +9,16 @@ const SignUp = () => {
     email: "",
     password: "",
   });
+
+  const navigate=useNavigate();
+
+  const handlesignup=(event)=>{
+    event.preventDefault();
+
+    console.log('sign up logic exceuted');
+    navigate('/login');
+  }
+
 
   const [errors, setErrors] = useState({});
 
@@ -93,7 +105,6 @@ const SignUp = () => {
         )}
       </div>
   
-      {/* New File Input for Profile Picture */}
       <div className="form-group">
         <label htmlFor="profilePicture">Profile Picture</label>
         <input
@@ -110,7 +121,7 @@ const SignUp = () => {
 
       
   
-      <button type="submit">Register</button>
+      <button type="submit" onClick={handlesignup}>Register</button>
     </form>
   </div>
   

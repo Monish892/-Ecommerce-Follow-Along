@@ -8,6 +8,7 @@ const ProductForm = () => {
     price: "",
     stock: "",
     images: [],
+    category:'',
   });
   const [previewImages, setPreviewImages] = useState([]);
 
@@ -101,6 +102,24 @@ const ProductForm = () => {
           required
         />
       </div>
+      
+
+    <div className="form-group">
+      <label htmlFor="category">Category</label>
+      <select
+        id="category"
+        name="category"
+        value={formData.category}
+        onChange={handleInputChange}    
+        required
+      >
+        <option value="">Select a category</option>
+        <option value="shoes">Shoes</option>
+        <option value="clothing">Clothing</option>
+        <option value="electronics">Electronics</option>
+        <option value="accessories">Accessories</option>
+      </select>
+    </div>
 
       <div className="form-group">
         <label htmlFor="images">Upload Images</label>
