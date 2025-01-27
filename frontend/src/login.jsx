@@ -1,7 +1,29 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
+
+
+  const navigate=useNavigate();
+
+  const handlelogin=(event)=>{
+
+    event.preventDefault();
+    console.log('login logic exceuted');
+
+    navigate('/')
+    
+
+
+  }
+
+
+
+
+
+
+
   return (
     <div className="login-container">
       <div className="login-form">
@@ -25,7 +47,7 @@ const Login = () => {
               className="input-field"
             />
           </div>
-          <button type="submit" className="submit-button">Submit</button>
+          <button type="submit" className="submit-button" onClick={handlelogin}>Submit</button>
         </form>
       </div>
     </div>

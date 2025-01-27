@@ -4,7 +4,7 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
   }
@@ -67,4 +67,18 @@
   .submit-button:hover {
     background-color: #0056b3;
   }
+
+input,
+select,
+button {
+  width: 103%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  /* position: relative;
+  right: 1px; */
+}
   
+
