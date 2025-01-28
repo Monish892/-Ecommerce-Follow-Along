@@ -335,6 +335,63 @@ This lesson is focused on understanding how to build forms in React for collecti
 - Prepare a `FormData` object to send data to the backend.
 
 ---
+# Milestone 10 Progress Report
 
+## Project Overview
+Milestone 10 focuses on learning and implementing the fundamentals of creating a product schema and building a secure endpoint to validate and store product details in MongoDB. This milestone serves as a foundational step toward understanding backend development processes and data management.
+
+## Goals for Milestone 10
+1. **Learn Product Schema Development**
+   - Define the structure of product data using Mongoose.
+   - Ensure proper validation for fields such as name, description, price, and image URL.
+
+2. **Create a POST Endpoint**
+   - Build a secure endpoint to receive and validate product data.
+   - Save validated product details to MongoDB.
+
+3. **Understand Data Validation**
+   - Learn the importance of validation for maintaining data integrity and preventing database errors.
+
+## Key Features Implemented
+### Product Schema
+- **Structure:**
+  - Defined key fields: `name`, `description`, `price`, and `imageURL`.
+  - Set data types and validation rules:
+    - `name`: String, required.
+    - `description`: String, required.
+    - `price`: Number, required, must be positive.
+    - `imageURL`: String, required, must be a valid URL.
+
+- **Validation:**
+  - Ensured all required fields are present.
+  - Enforced correct data types for each field.
+  - Added custom validation rules where necessary.
+
+### Endpoint Creation
+- **Endpoint:** Built a POST endpoint to handle product data submission.
+  - **Route:** `/api/products`
+  - **Functionality:**
+    1. Receives product data in JSON format.
+    2. Validates the data against the Mongoose schema.
+    3. Saves validated data to the MongoDB database.
+  - **Error Handling:** Added error responses for invalid data submissions.
+
+### Why Validation?
+- Prevents invalid or malformed data from being saved.
+- Protects database integrity.
+- Reduces potential runtime errors caused by improper data.
+
+## Challenges and Solutions
+### Challenges
+- Designing a schema that balances flexibility and validation.
+- Implementing robust error handling for the endpoint.
+
+### Solutions
+- Used Mongoose’s built-in schema validation to enforce data rules.
+- Created descriptive error messages for client-side feedback.
+
+## Additional Experimentation
+- **Admin Access:** Implemented a basic admin authentication feature to restrict product uploads.
+- **Shop Profiles:** Designed a user role system to allow only users with a shop profile to upload products.
 
 
