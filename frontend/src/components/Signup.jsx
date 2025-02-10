@@ -1,131 +1,98 @@
-import React, { useState } from "react";
-import "./signUp.css";
-// import axios from 'axios';
-import { useNavigate } from "react-router-dom";
 
-const SignUp = () => {
+
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import './signup.css';
+
+const SignupForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
+    username: '',
+    email: '',
+    password: '',
   });
-
-  const navigate=useNavigate();
-
-  const handlesignup=(event)=>{
-    event.preventDefault();
-
-    console.log('sign up logic exceuted');
-    navigate('/login');
-  }
-
 
   const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.username.trim()) {
+      newErrors.username = 'Username is required.';
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required.';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Invalid email address.';
+    }
+
+    if (!formData.password.trim()) {
+      newErrors.password = 'Password is required.';
+    } else if (formData.password.length < 6) {
+      newErrors.password = 'Password must be at least 6 characters.';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const validateForm = () => {
-    const newErrors = {};
-    if (formData.name.trim().length < 3) {
-      newErrors.name = "Name must be at least 3 characters.";
-    }
+  const handlesignup = (event) => {
+    event.preventDefault();
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address.";
-    }
-
-    if (formData.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters.";
-    }
-
-    return newErrors;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const formErrors = validateForm();
-    if (Object.keys(formErrors).length === 0) {
-      alert("Sign-Up Successful!");
-      console.log("Submitted Data:", formData);
-
-      setFormData({ name: "", email: "", password: "" });
-      setErrors({});
+    if (validateForm()) {
+      console.log('Sign-up logic executed');
+      navigate('/login');
     } else {
-      setErrors(formErrors);
+      console.log('Validation failed');
     }
   };
 
   return (
-    <div className="signup-container">
-    <h1>Sign Up</h1>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handlesignup} className="signup-form">
+      <h1 className="form-title">Sign Up</h1>
       <div className="form-group">
-        <label htmlFor="name">Name</label>
+        <label>Username:</label>
         <input
           type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Enter your name"
+          name="username"
+          value={formData.username}
+          onChange={handleInputChange}
+          className={errors.username ? 'input-error' : ''}
         />
-        {errors.name && <small className="error-message">{errors.name}</small>}
+        {errors.username && <p className="error-message">{errors.username}</p>}
       </div>
-  
       <div className="form-group">
-        <label htmlFor="email">Email</label>
+        <label>Email:</label>
         <input
           type="email"
-          id="email"
           name="email"
           value={formData.email}
-          onChange={handleChange}
-          placeholder="Enter your email"
+          onChange={handleInputChange}
+          className={errors.email ? 'input-error' : ''}
         />
-        {errors.email && <small className="error-message">{errors.email}</small>}
+        {errors.email && <p className="error-message">{errors.email}</p>}
       </div>
-  
       <div className="form-group">
-        <label htmlFor="password">Password</label>
+        <label>Password:</label>
         <input
           type="password"
-          id="password"
           name="password"
           value={formData.password}
-          onChange={handleChange}
-          placeholder="Enter a strong password"
+          onChange={handleInputChange}
+          className={errors.password ? 'input-error' : ''}
         />
-        {errors.password && (
-          <small className="error-message">{errors.password}</small>
-        )}
+        {errors.password && <p className="error-message">{errors.password}</p>}
       </div>
-  
-      <div className="form-group">
-        <label htmlFor="profilePicture">Profile Picture</label>
-        <input
-          type="file"
-          id="profilePicture"
-          name="profilePicture"
-          accept="image/*" 
-          onChange={handleChange}
-        />
-        {errors.profilePicture && (
-          <small className="error-message">{errors.profilePicture}</small>
-        )}
-      </div>
-
-      
-  
-      <button type="submit" onClick={handlesignup}>Register</button>
+      <button type="submit" className="submit-button">Sign Up</button>
     </form>
-  </div>
-  
   );
 };
 
-export default SignUp;
+export default SignupForm;
+

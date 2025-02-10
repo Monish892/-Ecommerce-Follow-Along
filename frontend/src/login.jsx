@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Login.css';
 
 
 const Login = () => {
@@ -12,7 +13,7 @@ const Login = () => {
     event.preventDefault();
     console.log('login logic exceuted');
 
-    navigate('/')
+    navigate('/form')
     
 
 
