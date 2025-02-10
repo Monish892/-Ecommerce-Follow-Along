@@ -380,3 +380,13 @@ In Milestone 12, we implemented a "My Products" page where users can see the pro
 - React, JavaScript
 - Authentication (JWT)
 
+## Milestone 13 - Edit Product Functionality
+
+In Milestone 13, I added the ability to edit products directly from the product card. By clicking the "Edit" button, the user is taken to a form that auto-fills with the existing product data. The user can update the product information and save the changes.
+
+### Backend Changes:
+- A new **PUT** endpoint (`/api/products/:id`) was created to update product data in the database.
+
+### Frontend Changes:
+- Added an **Edit** button to the `ProductCard` component.
+- Created a new page (`EditProductPage`) where the product details are auto-filled in a form and can be updated.
