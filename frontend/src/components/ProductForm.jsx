@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./ProductForm.css"; 
+import { useNavigate } from "react-router-dom";
+
 
 const ProductForm = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +18,13 @@ const ProductForm = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
+  const navigate=useNavigate();
+  const handlesignup=(event)=>{
+    event.preventDefault();
+    console.log('sign up logic exceuted');
+    navigate('/'); 
+  }
 
   const handleFileChange = (e) => {
     const files = Array.from(e.target.files);
@@ -143,7 +152,7 @@ const ProductForm = () => {
         </div>
       </div>
 
-      <button type="submit" className="submit-button">
+      <button type="submit" className="submit-button" onClick={handlesignup}>
         Submit
       </button>
     </form>

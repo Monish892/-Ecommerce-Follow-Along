@@ -10,7 +10,7 @@ const ProductSchema=new mongoose.Schema({
   
     },
   
-    description:{
+    description:{                                       
       type:String,
       required:[true,'product description is required'],
       trim:true,
@@ -18,13 +18,15 @@ const ProductSchema=new mongoose.Schema({
   
   
     },
-  
+    
     price:{
       type:Number,
       required:[true,"product price is requiered"],
       min:[0,"price must be greater than or equal to zero"],
   
     },
+
+    
   
     stock:{
       type:Number,
