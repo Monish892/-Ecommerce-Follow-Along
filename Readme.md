@@ -365,4 +365,18 @@ ProductCard Component:
 Designed a reusable ProductCard component to display individual product details such as name, description, image, and price.
 
 
+## Milestone 12 - My Products Page
+
+In Milestone 12, we implemented a "My Products" page where users can see the products they’ve added to the system. The products are fetched from the backend by filtering them based on the user’s email.
+
+### Backend Changes:
+- A new endpoint `/api/my-products` was created to filter and fetch products by the authenticated user's email.
+
+### Frontend Changes:
+- A new React component, `MyProductsPage`, was created to fetch and display the products using the `/api/my-products` endpoint.
+
+### Key Technologies:
+- Node.js, Express, MongoDB
+- React, JavaScript
+- Authentication (JWT)
 

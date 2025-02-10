@@ -4,6 +4,7 @@ const userRoutes = require("./routes/userRoutes");
 const {createProduct, getProduct, getProductById, updateProduct, Deleteproduct}=require('./controllers/formcontroller')
 const cors=require('cors')
 const Product = require('./models/formmodels')
+const productRoutes = require('./routes/productroutes')
 
 const app = express();
 app.post('./api/products',createProduct,getProduct,getProductById,updateProduct,Deleteproduct)

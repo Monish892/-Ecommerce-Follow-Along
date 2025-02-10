@@ -5,7 +5,12 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("/api/products") 
+    fetch("/api/my-products",{
+        method: 'GET',
+        headers: {
+            'auth-token': `Bearer ${localStorage.getItem('auth-token')}`, 
+    }}
+)
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching products:", error));
